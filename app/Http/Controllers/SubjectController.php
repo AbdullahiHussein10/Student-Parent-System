@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use school;
 use App\Subject;
 use App\Student;
-
 use Illuminate\Http\Request;
+
 
 class SubjectController extends Controller
 {
@@ -29,6 +29,7 @@ class SubjectController extends Controller
     public function create(Request $request)
     {
         
+
         return view('subject.create');
     }
 
@@ -46,6 +47,7 @@ class SubjectController extends Controller
 
         $subjects->first_name = $request->input('first_name');
         $subjects->last_name = $request->input('last_name');
+        $subjects->grade = $request->input('grade');
         $subjects->adm_no = $request->input('adm_no');
         $subjects->subject_code = $request->input('subject_code');
         $subjects->subject_name = $request->input('subject_name');
@@ -93,15 +95,14 @@ class SubjectController extends Controller
     public function update(Request $request, $id)
     {
         $subjects = subject::find($id);
-        $subjects->first_name =  $request->get('first_name');
-        $subjects->last_name = $request->get('last_name');
+
         $subjects->adm_no = $request->get('adm_no');
         $subjects->subject_code = $request->get('subject_code');
         $subjects->subject_name = $request->get('subject_name');
         $subjects->subject_teacher = $request->get('subject_teacher');
         $subjects->save();
 
-        return redirect('/subject')->with('success', 'subjects updated!');
+        return redirect('subject.view')->with('success', 'subjects updated!');
     }
 
     /**
@@ -114,7 +115,7 @@ class SubjectController extends Controller
     {
         $subjects = subject::find($id);
         $subjects->delete();
-        return redirect('/subject')->with('success');
+        return redirect('/subject.view')->with('success');
     }
 
     public function search(Request $request)

@@ -18,9 +18,9 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <td>First Name</td>
-                <td>Last Name</td>
-                <td>Admission Number</td>
+                            <td>Subject Name</td>
+                            <td>Subject Code</td>
+                            <td>Subject Teacher</td>
                             <td>Grade</td>
                             
                         </tr>

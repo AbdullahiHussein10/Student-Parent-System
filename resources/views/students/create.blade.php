@@ -1,9 +1,10 @@
 @extends('layouts.layout')
+)
 
 @section('main')
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-3">Add a Student</h1>
+    <h1 class="display-9">Student Registration</h1>
   <div>
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -14,11 +15,18 @@
         </ul>
       </div><br />
     @endif
-    <div>
+
+    <div class="col-md-9">
+    <a href ="{{ url('/home')}}" class="btn btn">Home</a>
+    </div>
+    <div class="col-md-3">
     <a href="{{ route('students.index') }}" class="btn btn-primary">View</a>
+    </div>
     </div>
       <form method="post" action="{{ route('students.store') }}">
           @csrf
+
+
           <div class="form-group">    
               <label for="first_name">First Name:</label>
               <input type="text" class="form-control" name="first_name"/>
@@ -34,12 +42,24 @@
               <input type="text" class="form-control" name="adm_no"/>
           </div>
           <div class="form-group">
-              <label for="grade">Grade:</label>
-              <input type="text" class="form-control" name="grade"/>
-          </div>
+          <label for="adm_no">Grade:</label>
+          <select name="grade">
+
+                <option value="Form One">Form One</option>
+                <option value="Form One">Form Two</option>
+                <option value="Form Three">Form Three</option>
+                <option value="Form Four">Form Four</option>
+            </select>
+ 
+            </div>
+              
+        
           <div class="form-group">
-              <label for="gender">Gender:</label>
-              <input type="text" class="form-control" name="gender"/>
+          <label for="adm_no">Gender:</label>
+          <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+      </select>
           </div>
           <div class="form-group">
               <label for="date_of_birth">Date Of Birth:</label>

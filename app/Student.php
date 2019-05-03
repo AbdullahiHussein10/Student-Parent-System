@@ -8,6 +8,7 @@ class Student extends Model
 {
     protected $table = 'students';
     protected $fillable = [
+        'students_id',
         'first_name',
         'last_name',
         'adm_no',
@@ -23,4 +24,9 @@ class Student extends Model
         'email',
         'phone_number',
     ];
+
+    public function subjects()
+    {
+        return $this->hasMany('App\Subject','id','subject_code','subject_name');
+    }
 }

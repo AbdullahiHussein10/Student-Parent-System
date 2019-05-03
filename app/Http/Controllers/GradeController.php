@@ -92,6 +92,7 @@ class GradeController extends Controller
     public function update(Request $request, $id)
     {
         $grades = grade::find($id);
+
         $grades->subject_code =  $request->get('subject_code');
         $grades->subject_name = $request->get('subject_name');
         $grades->subject_grade = $request->get('subject_grade');
@@ -117,7 +118,7 @@ class GradeController extends Controller
 
     public function search(Request $request)
 {
-    $search = $request->get('search');
+    $search = $request->get('search1');
     $grade = grade::where('adm_no','like', '%' .$search. '%')->paginate(5);
     
 

@@ -1,12 +1,13 @@
 @extends('layouts.layout')
 
+    <div class="row">
+    <a href ="{{ url('/home')}}" class="btn btn">Home</a>
+    </div>
 @section('main')
 <div class="row">
 <div class="col-sm-12">
-    <h1 class="display-3">grades</h1>
-    <div>
-    <a href="{{ url('/welcome') }}" class="btn btn-primary">Home</a>
-    </div>
+    <h1 class="display-7">Grades</h1>
+
   <table class="table table-striped">
     <thead>
         <tr>
@@ -25,15 +26,9 @@
             <td>{{$grade->subject_code}}</td>
             <td>{{$grade->subject_marks}}</td>
             <td>{{$grade->subject_grade}}</td>
+
             <td>
-                <a href="{{ route('grades.edit',$grade)}}" class="btn btn-primary">Edit</a>
-            </td>
-            <td>
-                <form action="{{ route('grades.destroy', $grade)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
-                </form>
+
             </td>
         </tr>
         @endforeach

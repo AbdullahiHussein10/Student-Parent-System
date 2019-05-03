@@ -1,15 +1,18 @@
 @extends('layouts.layout')
 
+
+    <div class="col-md-9">
+    <a href ="{{ url('/home')}}" class="btn btn">Home</a>
+    </div>
 @section('main')
 <div class="row">
 <div class="col-sm-12">
-    <h1 class="display-3">subjects</h1>
+    <h1 class="display-7">Courses</h1>
 
   <table class="table table-striped">
     <thead>
         <tr>
           <td>ID</td>
-          <td>Name</td>
           <td>Admission Number</td>
           <td>Subject Name</td>
           <td>Subject Code</td>
@@ -19,8 +22,7 @@
     <tbody>
         @foreach($subjects as $subject)
         <tr>
-            <td>{{$subject->id}}</td>
-            <td>{{$subject->first_name}} {{$subject->last_name}}</td>
+        <td>{{$subject->id}}</td>
             <td>{{$subject->adm_no}}</td>
             <td>{{$subject->subject_code}}</td>
             <td>{{$subject->subject_name}}</td>

@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return redirect('/login');
+});
+
+Route::get('/home', function(){
+    return view('home');
 });
 
 Route::get('/studentdetails', function(){
@@ -49,12 +53,12 @@ Route::get('edit/{id}','GradeController@edit');
 Route::resource('subject', 'SubjectController');
 
 Route::get('/subject', function(){
-    return view('subject.initial');
+    return view('subject.create');
 });
 
 Route::get('search', 'StudentController@search');
 Route::get('insert','SubjectController@insertform');
-Route::post('create','SubjectController@store'); 
+Route::post('subject/create','SubjectController@store'); 
 Route::get('subject.view','SubjectController@index');
 Route::post('update/{id}','SubjectController@update');
 Route::get('edit/{id}','SubjectController@edit');
@@ -85,3 +89,9 @@ Route::get('view','UserController@index');
 Route::post('update/{id}','UserController@update');
 Route::get('edit/{id}','UserController@edit');
 
+Route::get('/basicdetails', function(){
+    return view('students.view');
+});
+
+Route::get('layouts.app', 'HomeController@admin')->middleware('admin');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

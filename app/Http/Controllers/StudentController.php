@@ -141,12 +141,11 @@ public function search(Request $request)
 {
     $search = $request->get('search');
     $student = Student::where('adm_no','like', '%' .$search. '%')->paginate(5);
-    
 
 		if (count ( $student ) > 0)
-			return view ( 'subject.initial' )->withDetails ( $student )->withQuery ( $search );
+			return view ( 'subject.create' )->withDetails ( $student )->withQuery ( $search );
 		else
-			return view ( 'subject.initial' )->withMessage ( 'No Details found. Try to search again !' );
+			return view ( 'subject.create' )->withMessage ( 'No Details found. Try to search again !' );
 	
 }
 

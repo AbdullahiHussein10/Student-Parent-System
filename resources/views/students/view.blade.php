@@ -2,8 +2,12 @@
 
 @section('main')
 <div class="row">
-<div class="col-sm-12">
-    <h1 class="display-3">students</h1>
+<div class="col-sm-1">
+    <h1 class="display-7">Students</h1>
+
+    <div class="row">
+    <a href ="{{ url('/home')}}" class="btn btn">Home</a>
+    </div>
     <div>
     <a href="{{ route('students.create') }}" class="btn btn-primary">Create</a>
     </div>
