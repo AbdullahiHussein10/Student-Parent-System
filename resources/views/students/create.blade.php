@@ -27,24 +27,29 @@
           @csrf
 
 
-          <div class="form-group">    
-              <label for="first_name">First Name:</label>
-              <input type="text" class="form-control" name="first_name"/>
+          <div class="form-group">
+              <label for="first_name">First Name:</label><br> 
+              <input type="text" name="first_name"/>
+
+              <label for="middle_name">Middle Name:</label>
+              <input type="text" name="middle_name"/>
           </div>
 
           <div class="form-group">
-              <label for="last_name">Last Name:</label>
-              <input type="text" class="form-control" name="last_name"/>
+          <label for="last_name">Last Name:</label><br> 
+          <input type="text" name="last_name"/>
           </div>
 
           <div class="form-group">
-              <label for="adm_no">Admission Number:</label>
-              <input type="text" class="form-control" name="adm_no"/>
+              <label for="adm_no">Admission Number:</label><br> 
+              <input type="text" name="adm_no"/>
           </div>
-          <div class="form-group">
-          <label for="adm_no">Grade:</label>
+
+
+          <div class="dropdown">
+          <label for="grade">Grade:</label>
           <select name="grade">
-
+                
                 <option value="Form One">Form One</option>
                 <option value="Form One">Form Two</option>
                 <option value="Form Three">Form Three</option>
@@ -70,29 +75,15 @@
               <input type="date" class="form-control" name="enrollment_date"/>
           </div>   
           <div class="form-group">
-              <label for="home_address">Home Address:</label>
-              <input type="text" class="form-control" name="home_address"/>
+              <label for="home_address">Home Address:</label><br>
+
+              <label for="city">City:</label>
+              <input type="text" name="city">
+              
+              <label for="province">Province:</label>
+              <input type="text" name="province">
           </div> 
-          <div class="form-group">
-              <label for="parent_id">Parentid:</label>
-              <input type="number" class="form-control" name="parent_id"/>
-          </div>    
-          <div class="form-group">
-              <label for="parent_first_name">Parent First Name:</label>
-              <input type="text" class="form-control" name="parent_first_name"/>
-          </div>    
-          <div class="form-group">
-              <label for="parent_last_name">Parent Last Name:</label>
-              <input type="text" class="form-control" name="parent_last_name"/>
-          </div>   
-          <div class="form-group">
-              <label for="parent_email">Parent Email:</label>
-              <input type="text" class="form-control" name="parent_email"/>
-          </div>    
-          <div class="form-group">
-              <label for="parent_phone_number">Parents Phone Number:</label>
-              <input type="number" class="form-control" name="parent_phone_number"/>
-          </div>    
+
                         
           <button type="submit" class="btn btn-primary-outline">Add student</button>
       </form>

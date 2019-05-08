@@ -10,6 +10,8 @@ class Subject extends Model
 
 
     protected $fillable = [
+        'student_id',
+        'class',
         'adm_no',
         'subject_code',
         'subject_name',
@@ -18,6 +20,19 @@ class Subject extends Model
 
     public function students()
     {
-        return $this->belongsTo('App\Student', 'id','adm_no');
+        return $this->belongsToMany('App\Student');
+    }
+
+    public function teachers()
+    {
+        return $this->hasMany('App\Teacher');
+    }
+    public function grades()
+    {
+        return $this->hasOne('App\Grade');
+    }
+    public function classes()
+    {
+        return $this->hasOne('App\Classes');
     }
 }

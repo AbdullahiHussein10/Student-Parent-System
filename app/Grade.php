@@ -10,11 +10,12 @@ class Grade extends Model
 
     public function subject()
     {
-        return $this->hasOne('Subject::class');
+        return $this->hasOne('App\Subject');
     }
 
     public function students()
     {
-        return $this->hasMany('Student::class');
+        return $this->hasMany('App\Student');
     }
+
 }

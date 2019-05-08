@@ -15,8 +15,10 @@ class CreateAttendanceTable extends Migration
     {
         Schema::create('attendance', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('days_present');
-            $table->integer('days_absent');
+            $table->integer('student_id');
+            $table->date('date');
+            $table->string('status');
+            $table->text('remarks');
             $table->integer('attendance_percentage');
             $table->timestamps();
         });

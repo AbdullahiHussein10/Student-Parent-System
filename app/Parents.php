@@ -14,5 +14,11 @@ class Parents extends Model
         'last_name',
         'email',
         'phone_number',
+
     ];
+
+    public function students()
+    {
+        return $this->hasMany('App\Student');
+    }
 }
