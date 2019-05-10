@@ -45,13 +45,8 @@ class SubjectController extends Controller
     {
         $subjects = new Subject();
 
-        $subjects->first_name = $request->input('first_name');
-        $subjects->last_name = $request->input('last_name');
-        $subjects->grade = $request->input('grade');
-        $subjects->adm_no = $request->input('adm_no');
         $subjects->subject_code = $request->input('subject_code');
         $subjects->subject_name = $request->input('subject_name');
-      
         $subjects->subject_teacher = $request->input('subject_teacher');
 
         $subjects->save();
@@ -95,8 +90,7 @@ class SubjectController extends Controller
     public function update(Request $request, $id)
     {
         $subjects = subject::find($id);
-
-        $subjects->adm_no = $request->get('adm_no');
+        
         $subjects->subject_code = $request->get('subject_code');
         $subjects->subject_name = $request->get('subject_name');
         $subjects->subject_teacher = $request->get('subject_teacher');

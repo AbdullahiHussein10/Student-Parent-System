@@ -95,3 +95,17 @@ Route::get('/basicdetails', function(){
 
 Route::get('layouts.app', 'HomeController@admin')->middleware('admin');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('teachers', function()
+{
+    return view('Teachers.create');
+});
+
+Route::resource('teacher', 'TeacherController');
+
+
+Route::get('insert','TeacherController@insertform');
+Route::post('create','TeacherController@store'); 
+Route::get('view','TeacherController@index');
+Route::post('update/{id}','TeacherController@update');
+Route::get('edit/{id}','TeacherController@edit');

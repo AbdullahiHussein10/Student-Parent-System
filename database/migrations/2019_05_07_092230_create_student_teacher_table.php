@@ -22,8 +22,8 @@ class CreateStudentTeacherTable extends Migration
             $table->timestamps();
         });
         Schema::table('student_teacher', function($table){
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->foreign('teacher_id')->references('id')->on('teachers');
+            $table->foreign('student_id')->references('student_id')->on('students');
+            $table->foreign('teacher_id')->references('teachers_id')->on('teachers');
         });
     }
 

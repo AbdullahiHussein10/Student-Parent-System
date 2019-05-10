@@ -14,14 +14,16 @@ class CreateClassesTeacherTable extends Migration
     public function up()
     {
         Schema::create('classes_teacher', function (Blueprint $table) {
+
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('classes_id');
             $table->unsignedBigInteger('teachers_id');
             $table->timestamps();
         });
         Schema::table('classes_teacher', function($table){
-            $table->foreign('classes_id')->references('id')->on('classes');
-            $table->foreign('teachers_id')->references('id')->on('teachers');
+            $table->foreign('classes_id')->references('classes_id')->on('classes');
+            $table->foreign('teachers_id')->references('teachers_id')->on('teachers');
         });
     }
 

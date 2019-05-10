@@ -23,8 +23,8 @@ class CreateStudentsSubjectsTable extends Migration
             $table->timestamps();
         });
         Schema::table('students_subjects', function($table){
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->foreign('subjects_id')->references('id')->on('subjects');
+            $table->foreign('student_id')->references('student_id')->on('students');
+            $table->foreign('subjects_id')->references('subject_id')->on('subjects');
         });
 
  

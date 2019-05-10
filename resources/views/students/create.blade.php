@@ -1,34 +1,22 @@
 @extends('layouts.layout')
-)
 
-@section('main')
-<div class="row">
- <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-9">Student Registration</h1>
-  <div>
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      </div><br />
-    @endif
+<div class="container">
+<div class="row justify-content-end">
+<a href = "{{url('/home')}}">Home</a>
 
-    <div class="col-md-9">
-    <a href ="{{ url('/home')}}" class="btn btn">Home</a>
-    </div>
+</div>
+
+
+    <div class="row justify-content-center">
     <div class="col-md-3">
-    <a href="{{ route('students.index') }}" class="btn btn-primary">View</a>
-    </div>
-    </div>
+    <p><strong>STUDENT REGISTRATION</strong></p>
       <form method="post" action="{{ route('students.store') }}">
           @csrf
+        
 
 
           <div class="form-group">
-              <label for="first_name">First Name:</label><br> 
+              <label for="first_name">First Name:</label>
               <input type="text" name="first_name"/>
 
               <label for="middle_name">Middle Name:</label>
@@ -77,7 +65,7 @@
           <div class="form-group">
               <label for="home_address">Home Address:</label><br>
 
-              <label for="city">City:</label>
+              <label for="city">City:</label><br>
               <input type="text" name="city">
               
               <label for="province">Province:</label>
@@ -85,9 +73,8 @@
           </div> 
 
                         
-          <button type="submit" class="btn btn-primary-outline">Add student</button>
+          <button type="submit" class="btn btn-primary">Add student</button>
       </form>
   </div>
 </div>
 </div>
-@endsection

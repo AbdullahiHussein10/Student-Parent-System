@@ -13,7 +13,6 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Admission Number</td>
           <td>Subject Name</td>
           <td>Subject Code</td>
           <td>Subject Teacher</td>
@@ -23,7 +22,6 @@
         @foreach($subjects as $subject)
         <tr>
         <td>{{$subject->id}}</td>
-            <td>{{$subject->adm_no}}</td>
             <td>{{$subject->subject_code}}</td>
             <td>{{$subject->subject_name}}</td>
             <td>{{$subject->subject_teacher}}</td>

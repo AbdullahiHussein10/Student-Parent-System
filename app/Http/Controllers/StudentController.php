@@ -48,17 +48,14 @@ class StudentController extends Controller
 
         $students->first_name = $request->input('first_name');
         $students->last_name = $request->input('last_name');
+        $students->middle_name = $request->input('middle_name');
         $students->adm_no = $request->input('adm_no');
         $students->grade = $request->input('grade');
         $students->gender = $request->input('gender');
         $students->date_of_birth = $request->input('date_of_birth');
         $students->enrollment_date = $request->input('enrollment_date');
-        $students->home_address = $request->input('home_address');
-        $students->parent_id = $request->input('parent_id');
-        $students->parent_first_name = $request->input('parent_first_name');
-        $students->parent_last_name = $request->input('parent_last_name');
-        $students->parent_email = $request->input('parent_email');
-        $students->parent_phone_number = $request->input('parent_phone_number');
+        $students->city = $request->input('city');
+        $students->province = $request->input('province');
 
         $students->save();
 
@@ -100,10 +97,12 @@ class StudentController extends Controller
             $students = student::find($id);
             $students->first_name =  $request->get('first_name');
             $students->last_name = $request->get('last_name');
+            $students->middle_name = $request->get('middle_name');
             $students->adm_no = $request->get('adm_no');
             $students->grade = $request->get('grade');
             $students->gender = $request->get('gender');
-            $students->home_address = $request->get('home_address');
+            $students->city = $request->get('city');
+            $students->province = $request->get('province');
             $students->date_of_birth = $request->get('date_of_birth');
             $students->enrollment_date = $request->get('enrollment_date');
             $students->save();

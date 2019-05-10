@@ -14,8 +14,7 @@ class CreateClassesTable extends Migration
     public function up()
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('classes_id');
+            $table->bigIncrements('classes_id');
             $table->bigInteger('year');
             $table->timestamps();
         });

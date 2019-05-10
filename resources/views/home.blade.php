@@ -1,22 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3">
-            <div class="card">
-                <div class="card-header">Welcome</div>
+            <div class="card bg-color:teal">
+                <div class="card-header bg-primary">MENU</div>
+
                 <div class="card-body">
-                <a href="/studentdetails">Students Details</a>
+                <a href="/studentdetails">Students Detail</a>
                 </div>
 
                 <div class="card-body">
-                <a href="/subject">Courses</a>
+                <a href="/subject">Course</a>
                 </div>
 
 
                 <div class="card-body">
-                <a href="/studentsperfomance">Students perfomance</a>
+                <a href="/studentsperfomance">Student Grades</a>
+                </div>
+
+                <div class="card-body">
+                <a href="/fees">Fees</a>
+                </div>
+
+                <div class="card-body">
+                <a href="/studentsattendance">Student Attendance Record</a>
+                </div>
+
+                <div class="card-body">
+                <a href="/teachers">Teachers</a>
+                </div>
+
+                <div class="card-body">
+                <a href="parents">Parents</a>
+                </div>
+
+                
+
+                <div class="card-body">
+                <a href="/teachers">Teacher-Connect</a>
                 </div>
                     
                 </div>

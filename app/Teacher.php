@@ -9,9 +9,12 @@ class Teacher extends Model
     protected $table = 'teachers';
 
     protected $fillable =  [
-        'teachers_id',
         'first_name',
         'last_name',
+        'id_no',
+        'date_of_birth',
+        'date_of_employment',
+        'phone_number',
         'email'
     ];
 
