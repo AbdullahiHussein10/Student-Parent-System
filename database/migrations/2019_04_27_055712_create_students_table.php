@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('last_name');
             $table->string('middle_name');
             $table->integer('adm_no');
-            $table->string('grade');
+            $table->string('classes');
             $table->string('gender');
             $table->date('date_of_birth');
             $table->date('enrollment_date');

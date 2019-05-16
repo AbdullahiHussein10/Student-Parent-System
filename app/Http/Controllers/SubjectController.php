@@ -5,6 +5,7 @@ use school;
 use App\Subject;
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 
 class SubjectController extends Controller
@@ -43,6 +44,7 @@ class SubjectController extends Controller
 
     public function store(Request $request)
     {
+
         $subjects = new Subject();
 
         $subjects->subject_code = $request->input('subject_code');
@@ -115,7 +117,7 @@ class SubjectController extends Controller
     public function search(Request $request)
 {
     $search = $request->get('search');
-    $subject = Subject::where('adm_no','like', '%' .$search. '%')->paginate(5);
+    $subject = Subject::where('grade','like', '%' .$search. '%')->paginate(5);
     
 
 		if (count ( $subject ) > 0)

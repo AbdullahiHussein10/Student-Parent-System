@@ -23,13 +23,21 @@ Route::get('/studentdetails', function(){
     return view('students.create');
 });
 
+Route::get('/courses', function(){
+    return view('subject.create');
+});
+
+Route::get('manage_student_subjects', function(){
+    return view('manage_student_subjects.create');
+});
+
 Auth::routes();
 
 Route::get('/welcome', 'HomeController@index')->name('home');
 
 Route::resource('students', 'StudentController');
 
-
+Route::get('search','StudentController@search');
 Route::get('insert','StudentController@insertform');
 Route::post('create','StudentController@store'); 
 Route::get('view','StudentController@index');
@@ -56,7 +64,6 @@ Route::get('/subject', function(){
     return view('subject.create');
 });
 
-Route::get('search', 'StudentController@search');
 Route::get('insert','SubjectController@insertform');
 Route::post('subject/create','SubjectController@store'); 
 Route::get('subject.view','SubjectController@index');
@@ -77,12 +84,13 @@ Route::get('/admin', 'AdminController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/admin', 'AdminController@admin')    
+    ->middleware('is_admin')    
+    ->name('admin');
 
 Route::resource('user', 'UserController');
 
 
-Route::get('search', 'StudentController@search');
 Route::get('insert','UserController@insertform');
 Route::post('create','UserController@store'); 
 Route::get('view','UserController@index');
@@ -109,3 +117,4 @@ Route::post('create','TeacherController@store');
 Route::get('view','TeacherController@index');
 Route::post('update/{id}','TeacherController@update');
 Route::get('edit/{id}','TeacherController@edit');
+

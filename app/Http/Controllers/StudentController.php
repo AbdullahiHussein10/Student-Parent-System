@@ -50,7 +50,7 @@ class StudentController extends Controller
         $students->last_name = $request->input('last_name');
         $students->middle_name = $request->input('middle_name');
         $students->adm_no = $request->input('adm_no');
-        $students->grade = $request->input('grade');
+        $students->classes = $request->input('classes');
         $students->gender = $request->input('gender');
         $students->date_of_birth = $request->input('date_of_birth');
         $students->enrollment_date = $request->input('enrollment_date');
@@ -99,7 +99,7 @@ class StudentController extends Controller
             $students->last_name = $request->get('last_name');
             $students->middle_name = $request->get('middle_name');
             $students->adm_no = $request->get('adm_no');
-            $students->grade = $request->get('grade');
+            $students->classes = $request->get('classes');
             $students->gender = $request->get('gender');
             $students->city = $request->get('city');
             $students->province = $request->get('province');
@@ -139,28 +139,15 @@ class StudentController extends Controller
 public function search(Request $request)
 {
     $search = $request->get('search');
-    $student = Student::where('adm_no','like', '%' .$search. '%')->paginate(5);
+    $student = Student::where('classes','like', '%' .$search. '%')->paginate(5);
 
 		if (count ( $student ) > 0)
-			return view ( 'subject.create' )->withDetails ( $student )->withQuery ( $search );
+			return view ( 'manage_student_subjects.create' )->withDetails ( $student )->withQuery ( $search );
 		else
 			return view ( 'subject.create' )->withMessage ( 'No Details found. Try to search again !' );
 	
 }
 
-
-public function search1(Request $request)
-{
-    $search = $request->get('search');
-    $subject = Subject::where('adm_no','like', '%' .$search. '%')->paginate(5);
-    
-
-		if (count ( $subject ) > 0)
-			return view ( 'grades.initial2' )->withDetails ( $subject )->withQuery ( $search );
-		else
-			return view ( 'grades.initial2' )->withMessage ( 'No Details found. Try to search again !' );
-	
-}
 
 
 

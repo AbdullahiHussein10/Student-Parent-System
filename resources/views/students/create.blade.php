@@ -3,8 +3,12 @@
 <div class="container">
 <div class="row justify-content-end">
 <a href = "{{url('/home')}}">Home</a>
+<div class="row justify-content-start">
+<a href="{{url('/view')}}">View</a>
+</div>
 
 </div>
+
 
 
     <div class="row justify-content-center">
@@ -35,8 +39,8 @@
 
 
           <div class="dropdown">
-          <label for="grade">Grade:</label>
-          <select name="grade">
+          <label for="classes">class:</label>
+          <select name="classes">
                 
                 <option value="Form One">Form One</option>
                 <option value="Form One">Form Two</option>

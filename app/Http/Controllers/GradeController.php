@@ -119,7 +119,7 @@ class GradeController extends Controller
     public function search(Request $request)
 {
     $search = $request->get('search1');
-    $grade = grade::where('adm_no','like', '%' .$search. '%')->paginate(5);
+    $grade = grade::where('grade','like', '%' .$search. '%')->paginate(5);
     
 
 		if (count ( $grade ) > 0)

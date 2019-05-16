@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
+use App\Subject;
+use App\Teacher;
+use App\Parents;
 
 class HomeController extends Controller
 {
@@ -22,7 +26,13 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
-    }
+    {   
+        $studentCount = Student::count();
+        $subjectCount = Subject::count();
+        $teacherCount = Teacher::count();
+        $parentCount = Parents::count();
+        return view('home', compact('studentCount', 'subjectCount', 'teacherCount', 'parentCount'));
+
+}
+
 }
